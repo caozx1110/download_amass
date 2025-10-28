@@ -131,6 +131,65 @@ auth_token=your_auth_token
    python download_amass.py
    ```
 
+6. **解压下载的文件**（可选）：
+   ```bash
+   # Python版本（推荐，支持多线程）
+   python extract_amass.py
+   
+   # 或使用Shell版本
+   ./extract_amass.sh
+   ```
+
+## 数据解压
+
+下载完成后，使用解压脚本批量解压所有 `.tar.bz2` 文件。
+
+### Python解压脚本（推荐）
+
+**基本用法**：
+```bash
+# 使用默认设置解压所有文件
+python extract_amass.py
+
+# 指定输入和输出目录
+python extract_amass.py --input ./amass_data --output ./amass_data/extracted
+
+# 使用多线程加速（2-4线程）
+python extract_amass.py --workers 2
+
+# 解压后删除原文件（节省空间）
+python extract_amass.py --delete
+
+# 只解压单个文件
+python extract_amass.py --file ./amass_data/CMU_smplx_neutral.tar.bz2
+```
+
+**特性**：
+- ✅ 支持批量解压
+- ✅ 支持多线程并行解压（加速）
+- ✅ 显示详细进度条（需要tqdm）
+- ✅ 自动错误处理和重试
+- ✅ 可选择解压后删除原文件
+
+### Shell解压脚本（备选）
+
+```bash
+# 基本用法
+./extract_amass.sh
+
+# 指定目录
+./extract_amass.sh -i ./amass_data -o ./output
+
+# 解压后删除原文件
+./extract_amass.sh -d
+
+# 只解压单个文件
+./extract_amass.sh -f ./amass_data/CMU_smplx_neutral.tar.bz2
+
+# 查看帮助
+./extract_amass.sh -h
+```
+
 ### 详细使用说明
 
 ### 下载所有配置的数据集
@@ -159,25 +218,32 @@ python download_amass.py --config my_config.json
 
 ## 可用的数据集
 
+根据最新的AMASS官网，以下24个数据集可供下载：
+
 - ACCAD
 - BMLhandball
 - BMLmovi
-- BioMotionLab_NTroje
+- BMLrub
 - CMU
+- CNRS
 - DanceDB
-- DFaust_67
+- DFaust
 - EKUT
-- Eyes_Japan_Dataset
+- EyesJapanDataset
+- GRAB
+- HDM05
 - HUMAN4D
 - HumanEva
 - KIT
-- MPI_HDM05
-- MPI_Limits
-- MPI_mosh
+- MoSh
+- PosePrior
 - SFU
-- SSM_synced
-- TCD_handMocap
+- SOMA
+- SSM
+- TCDHands
 - TotalCapture
+- Transitions
+- WEIZMANN
 - Transitions_mocap
 
 ## 身体模型选项
