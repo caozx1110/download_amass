@@ -1,0 +1,39 @@
+{
+    "download_options": {
+        "body_model": "SMPL-X",
+        "gender": "neutral",
+        "datasets": [
+            "ACCAD",
+            "BMLhandball",
+            "BMLmovi",
+            "BMLrub",
+            "CMU",
+            "CNRS",
+            "DanceDB",
+            "DFaust",
+            "EKUT",
+            "EyesJapanDataset",
+            "GRAB",
+            "HDM05",
+            "HUMAN4D",
+            "HumanEva",
+            "KIT",
+            "MoSh",
+            "PosePrior",
+            "SFU",
+            "SOMA",
+            "SSM",
+            "TCDHands",
+            "TotalCapture",
+            "Transitions",
+            "WEIZMANN"
+        ]
+    },
+    "download_settings": {
+        "output_dir": "./amass_data",
+        "cookie_file": "cookies.txt",
+        "max_retries": 3,
+        "timeout": 300,
+        "max_workers": 32
+    }
+}
