@@ -169,7 +169,7 @@ class AMassDownloader:
             model_dir = "smplh"
 
         # 根据性别确定子目录
-        if gender in ["male", "female"]:
+        if gender in ["gender_specific"]:
             gender_dir = "gender_specific"
         else:
             gender_dir = "neutral"
